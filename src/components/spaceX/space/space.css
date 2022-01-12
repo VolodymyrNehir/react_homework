@@ -1,0 +1,13 @@
+.space{
+    display: flex;
+    border: 7px solid antiquewhite;
+    justify-content: space-between;
+}
+.mission_name_year{
+    margin: 25px 45px 25px 45px ;
+}
+img{
+    width: 150px;
+    height: 150px;
+    margin: 35px 35px 35px 35px;
+}
