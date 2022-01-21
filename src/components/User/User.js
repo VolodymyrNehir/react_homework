@@ -2,13 +2,11 @@ import React from 'react';
 
 import './user.css';
 
-const User = ({user, userDetails}) => {
-    const {name, id} = user
-    console.log(userDetails)
+const User = ({user}) => {
+    const {name, id, email, username} = user
     return (
         <div className='user'>
-            {id} {name}
-            <button onClick={() => userDetails(user)}>UserDetails</button>
+            {id} - {name} - {username}- {email}
         </div>
     );
 };
