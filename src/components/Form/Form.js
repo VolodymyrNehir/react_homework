@@ -25,7 +25,7 @@ const Form = ({filter}) => {
                                       onChange={changeEvent}/></label>
 
                 <label>email<input type="text" name={'email'} value={form.email} onChange={changeEvent}/></label>
-                <button onClick={Check}>Check</button>
+                <button onClick={Check}>Filter</button>
 
             </form>
         </div>
