@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 
 const Form = ({filter}) => {
-
+   let [iphone,setIphone]= useState('');
+    console.log(iphone)
     const [form, setForm] = useState({name: '', username: '', email: ''});
 
     const changeEvent = (event) => {
-        const eventInput = {...form, [event.target.name]: event.target.value}
-        setForm({...form, ...eventInput});
-
+        let eventInput = {...form, [event.target.name]: event.target.value}
+        setForm({...form,...eventInput});
 
     }
     const Check = (c) => {
@@ -16,6 +16,9 @@ const Form = ({filter}) => {
 
 
     }
+
+
+
     return (
         <div>
             <form>
@@ -28,6 +31,8 @@ const Form = ({filter}) => {
                 <button onClick={Check}>Filter</button>
 
             </form>
+
+
         </div>
     );
 };
