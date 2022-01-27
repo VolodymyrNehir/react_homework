@@ -1,18 +1,21 @@
 import React from 'react';
 
-import {Route, Routes,Outlet, NavLink,BrowserRouter} from 'react-router-dom';
-import layout from './Layout.css';;
-// import posts from '/src/pages/Posts/Posts';
+import {NavLink, Outlet} from "react-router-dom";
+import './Layout.css';
+
 
 const Layout = () => {
     return (
-        <div className='layout.layout'>
-            hhhhh
-            {/*<link to='/posts' ></link>*/}
-{/*<NavLink to='/posts'>Posts</NavLink>*/}
-{/*           <Outlet/>*/}
-
+        <div>
+            <div className='layout'>
+                <NavLink to={'/users'}>Users</NavLink>
+                <NavLink to='/posts'>Posts</NavLink>
+            </div>
+            <div>
+                <Outlet/>
+            </div>
         </div>
+
     );
 };
 
