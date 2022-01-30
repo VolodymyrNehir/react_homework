@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useReducer} from "react";
+import {useReducer, useState} from "react";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -28,29 +28,43 @@ const reducer = (state, action) => {
 
 function App() {
     const [inc, setInc] = useReducer(reducer, {dollar: 0, cent: 0, hundredsDollars: 0})
+  const[infs,setinfa] = useState([])
+    console.log(infs);
     return (
         <div className="App">
-            <div className='hundredsDollars'>
-                hundreds of dollars
-                <div>{inc.hundredsDollars}00</div>
-                <button onClick={() => setInc({type: 'plushundredsDollars'})}>+</button>
-                <button onClick={() => setInc({type: 'minushundredsDollars'})}>-</button>
-                <button onClick={() => setInc({type: 'resethundredsDollars', payload: 0})}>reset</button>
+            <form >
+                <input type="text" name='dog'/>
+                <button>add dog</button>
+            </form>
 
-            </div>
-            <div className='dollar'> dollar
-                <div> {inc.dollar}</div>
-                <button onClick={() => setInc({type: 'plus'})}>+</button>
-                <button onClick={() => setInc({type: 'minus'})}>-</button>
-                <button onClick={() => setInc({type: 'reset', payload: 0})}>reset</button>
-            </div>
-            <div className='cent'>
-                cent
-                <div>{inc.cent}</div>
-                <button onClick={() => setInc({type: 'plusCent'})}>+</button>
-                <button onClick={() => setInc({type: 'minusCent'})}>-</button>
-                <button onClick={() => setInc({type: 'resetCent', payload: 0})}>reset</button>
-            </div>
+
+
+
+
+
+
+            {/*<div className='hundredsDollars'>*/}
+            {/*    hundreds of dollars*/}
+            {/*    <div>{inc.hundredsDollars}00</div>*/}
+            {/*    <form> <input onChange={value => setinfa(value)}/></form>*/}
+            {/*    <button onClick={() => setInc({type: 'plushundredsDollars'})}>+</button>*/}
+            {/*    <button onClick={() => setInc({type: 'minushundredsDollars'})}>-</button>*/}
+            {/*    <button onClick={() => setInc({type: 'resethundredsDollars', payload: 0})}>reset</button>*/}
+
+            {/*</div>*/}
+            {/*<div className='dollar'> dollar*/}
+            {/*    <div> {inc.dollar}</div>*/}
+            {/*    <button onClick={() => setInc({type: 'plus'})}>+</button>*/}
+            {/*    <button onClick={() => setInc({type: 'minus'})}>-</button>*/}
+            {/*    <button onClick={() => setInc({type: 'reset', payload: 0})}>reset</button>*/}
+            {/*</div>*/}
+            {/*<div className='cent'>*/}
+            {/*    cent*/}
+            {/*    <div>{inc.cent}</div>*/}
+            {/*    <button onClick={() => setInc({type: 'plusCent'})}>+</button>*/}
+            {/*    <button onClick={() => setInc({type: 'minusCent'})}>-</button>*/}
+            {/*    <button onClick={() => setInc({type: 'resetCent', payload: 0})}>reset</button>*/}
+            {/*</div>*/}
 
 
         </div>
