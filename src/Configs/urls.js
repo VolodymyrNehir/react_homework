@@ -5,4 +5,5 @@ export const urls = {
     posts: '/posts',
     albums: '/albums',
     photo: `/photos`,
+    comments: '/comments'
 }

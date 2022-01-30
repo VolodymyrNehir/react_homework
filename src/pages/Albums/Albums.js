@@ -20,4 +20,4 @@ const Albums = () => {
     );
 };
 
-export default Albums;
+export {Albums};

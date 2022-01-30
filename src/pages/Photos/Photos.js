@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+
 import {useParams} from "react-router-dom";
 import {photoService} from "../../Services/photo.service";
 import Photo from "../../components/photo/Photo";
@@ -16,4 +17,4 @@ const Photos = () => {
     );
 };
 
-export default Photos;
+export {Photos};

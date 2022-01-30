@@ -3,13 +3,9 @@ import './App.css';
 
 import {Route, Routes} from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-import Users from "./pages/Users/Users";
-import UserDetailes from "./components/UserDetailes/userDetailes";
-// import Post from "./components/Post/post";
 import UsersPosts from "./components/UsersPosts/UsersPosts";
-import Albums from "./pages/Albums/Albums";
-import Photos from "./pages/Photos/Photos";
-import Posts from "./pages/Posts/Posts";
+import {Albums, Comments, Photos, PostDetailes, Posts, Users} from "./pages";
+import UserDetailes from "./components/UserDetailes/userDetailes";
 
 
 function App() {
@@ -26,7 +22,11 @@ function App() {
                             <Route path={':photoid'} element={<Photos/>}/>
                         </Route>
                     </Route>
-                    <Route path={'/posts'} element={<Posts/>}/>
+                    <Route path={'/posts'} element={<Posts/>}>
+                        <Route path={'/posts/:postid'} element={<PostDetailes/>}>
+                            <Route path={'/posts/:postid/comments'} element={<Comments/>}/>
+                        </Route>
+                    </Route>
 
 
                 </Route>

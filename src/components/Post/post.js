@@ -1,11 +1,17 @@
 import React from 'react';
 
+import './post.css'
+import {NavLink} from "react-router-dom";
+
 const Post = ({post}) => {
     return (
-        <div>
-            <h3>userId:{post.userId}</h3>
-            <h4>id:{post.id}</h4>
-            <p>title:{post.title}</p>
+        <div className='post'>
+            <div className='postInfa'><h3>userId:{post.userId}</h3>
+                <h4>id:{post.id}</h4>
+                <p>title:{post.title}</p></div>
+            <div className='postButton'><NavLink to={`/posts/`+ post.id}><button>Post detailes</button></NavLink></div>
+
+
         </div>
     );
 };
