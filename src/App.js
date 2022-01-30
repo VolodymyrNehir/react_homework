@@ -22,6 +22,8 @@ const reducer = (state, action) => {
             return {...state, hundredsDollars: state.hundredsDollars - 1}
         case 'resethundredsDollars':
             return {...state, hundredsDollars: action.payload}
+        default:
+            throw new Error('err')
     }
 
 }
