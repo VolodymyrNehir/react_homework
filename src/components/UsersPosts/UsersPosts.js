@@ -9,7 +9,7 @@ const UsersPosts = () => {
     const {id} = useParams();
     useEffect(() => {
 
-        postsServices.userPosts(id).then(value => setPost(value))
+        postsServices.userPosts(id).then(value => setPost(value));
     }, [id])
 
     return (
