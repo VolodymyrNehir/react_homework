@@ -1,7 +1,7 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
 import './post.css'
-import {NavLink} from "react-router-dom";
 
 const Post = ({post}) => {
     return (

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-
 import {Route, Routes} from "react-router-dom";
+
 import Layout from "./components/Layout/Layout";
 import UsersPosts from "./components/UsersPosts/UsersPosts";
 import {Albums, Comments, Photos, PostDetailes, Posts, Users} from "./pages";

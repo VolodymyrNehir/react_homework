@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import {Outlet, useParams} from "react-router-dom";
 
 import {albumsServices} from "../../Services/albums.services";
-import {Outlet, useParams} from "react-router-dom";
 import Album from "../../components/Album/Album";
 
 const Albums = () => {

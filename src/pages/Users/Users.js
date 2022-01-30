@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import {Outlet} from "react-router-dom";
 
 
 import {usersServices} from "../../Services/users.services";
 import User from "../../components/User/User";
-import {Outlet} from "react-router-dom";
 import './Users.css'
 
 
