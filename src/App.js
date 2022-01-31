@@ -4,8 +4,8 @@ import {Route, Routes} from "react-router-dom";
 
 import Layout from "./components/Layout/Layout";
 import UsersPosts from "./components/UsersPosts/UsersPosts";
-import {Albums, Comments, Photos, PostDetailes, Posts, Users} from "./pages";
 import UserDetailes from "./components/UserDetailes/userDetailes";
+import {Albums, Comments, Photos, PostDetailes, Posts, Users} from "./pages";
 
 
 function App() {
