@@ -27,13 +27,17 @@ const reducer = (state, action) => {
 }
 
 function App() {
-    const [inc, setInc] = useReducer(reducer, {dollar: 0, cent: 0, hundredsDollars: 0})
+    const [inc, setInc] = useReducer(reducer, null)
   const[infs,setinfa] = useState([])
     console.log(infs);
+    const changeEvent = (event)=>{
+        // setinfa(...inc,)
+        console.log(event.target.current)
+    }
     return (
         <div className="App">
             <form >
-                <input type="text" name='dog'/>
+                <input type="text" name='dog' onChange={changeEvent}/>
                 <button>add dog</button>
             </form>
 
