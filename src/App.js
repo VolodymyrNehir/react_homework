@@ -2,49 +2,28 @@ import logo from './logo.svg';
 import './App.css';
 import {useReducer, useState} from "react";
 
+import {Cets, Dogs, Forms} from "./components";
+
+
+
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'plus':
-            return {...state, dollar: state.dollar + 1}
-        case 'minus':
-            return {...state, dollar: state.dollar - 1}
-        case 'reset':
-            return {...state, dollar: action.payload}
-        case 'plusCent':
-            return {...state, cent: state.cent + 1}
-        case 'minusCent':
-            return {...state, cent: state.cent - 1}
-        case 'resetCent':
-            return {...state, cent: action.payload}
-        case 'plushundredsDollars':
-            return {...state, hundredsDollars: state.hundredsDollars + 1}
-        case 'minushundredsDollars':
-            return {...state, hundredsDollars: state.hundredsDollars - 1}
-        case 'resethundredsDollars':
-            return {...state, hundredsDollars: action.payload}
+        case 'ADD_CET':
+
     }
 
 }
 
 function App() {
     const [inc, setInc] = useReducer(reducer, null)
-  const[infs,setinfa] = useState([])
+    const [infs, setinfa] = useState([])
     console.log(infs);
-    const changeEvent = (event)=>{
-        // setinfa(...inc,)
-        console.log(event.target.current)
-    }
+
     return (
         <div className="App">
-            <form >
-                <input type="text" name='dog' onChange={changeEvent}/>
-                <button>add dog</button>
-            </form>
-
-
-
-
-
+            <Cets/>
+            <Dogs/>
+            <Forms/>
 
 
             {/*<div className='hundredsDollars'>*/}
