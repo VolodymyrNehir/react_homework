@@ -2,52 +2,39 @@ import logo from './logo.svg';
 import './App.css';
 import {useReducer, useState} from "react";
 
-import {Cets, Dogs, Forms} from "./components";
-
+import {Cats, Dogs, Forms} from "./components";
 
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'ADD_CET':
-
+        case 'ADD_CAT':
+            return {...state, cats: [...state.cats, {id: Date.now(), name: action.payload.cat}]}
+        case 'ADD_DOG':
+            return {...state, dogs: [...state.dogs, {id: Date.now(), name: action.payload.dog}]}
+        case 'DeleteCat':
+            return {...state, cats: [...state.cats.filter(value => value.id !== action.payload.catId)]}
+        case 'DaleteDog':
+            return {...state, dogs: [...state.dogs.filter(value => value.id !== action.payload.dogId)]}
     }
 
 }
 
 function App() {
-    const [inc, setInc] = useReducer(reducer, null)
-    const [infs, setinfa] = useState([])
-    console.log(infs);
+    const [inc, setInc] = useReducer(reducer, {cats: [], dogs: []})
 
     return (
         <div className="App">
-            <Cets/>
-            <Dogs/>
-            <Forms/>
-
-
-            {/*<div className='hundredsDollars'>*/}
-            {/*    hundreds of dollars*/}
-            {/*    <div>{inc.hundredsDollars}00</div>*/}
-            {/*    <form> <input onChange={value => setinfa(value)}/></form>*/}
-            {/*    <button onClick={() => setInc({type: 'plushundredsDollars'})}>+</button>*/}
-            {/*    <button onClick={() => setInc({type: 'minushundredsDollars'})}>-</button>*/}
-            {/*    <button onClick={() => setInc({type: 'resethundredsDollars', payload: 0})}>reset</button>*/}
-
-            {/*</div>*/}
-            {/*<div className='dollar'> dollar*/}
-            {/*    <div> {inc.dollar}</div>*/}
-            {/*    <button onClick={() => setInc({type: 'plus'})}>+</button>*/}
-            {/*    <button onClick={() => setInc({type: 'minus'})}>-</button>*/}
-            {/*    <button onClick={() => setInc({type: 'reset', payload: 0})}>reset</button>*/}
-            {/*</div>*/}
-            {/*<div className='cent'>*/}
-            {/*    cent*/}
-            {/*    <div>{inc.cent}</div>*/}
-            {/*    <button onClick={() => setInc({type: 'plusCent'})}>+</button>*/}
-            {/*    <button onClick={() => setInc({type: 'minusCent'})}>-</button>*/}
-            {/*    <button onClick={() => setInc({type: 'resetCent', payload: 0})}>reset</button>*/}
-            {/*</div>*/}
+            <div>
+                <Forms setInc={setInc}/>
+            </div>
+            <div className="catsAndDogs">
+                <div>
+                    <Cats cat={inc} setInc={setInc}/>
+                </div>
+                <div>
+                    <Dogs dog={inc} setInc={setInc}/>
+                </div>
+            </div>
 
 
         </div>

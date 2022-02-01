@@ -1,5 +1,5 @@
-export * from './Cets/Cets';
+export * from './Cats/Cats';
 export * from './Forms/Forms';
-export  * from './Cet/Cet';
+export  * from './Cat/Cat';
 export  * from './Dog/Dog';
 export  * from './Dogs/Dogs';
