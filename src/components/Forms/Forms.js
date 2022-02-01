@@ -6,13 +6,13 @@ const Forms = ({setInc}) => {
     const sendCat = (e) => {
         e.preventDefault();
         setInc({type: 'ADD_CAT', payload: {cat: addCat.current.value}});
-        addCat.current.value = ''
+        addCat.current.value = '';
     }
 
     const sendDog = (e) => {
         e.preventDefault();
         setInc({type: 'ADD_DOG', payload: {dog: addDog.current.value}});
-        addDog.current.value = ''
+        addDog.current.value = '';
     }
 
 
