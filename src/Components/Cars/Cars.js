@@ -1,10 +1,15 @@
-import React from 'react';
-import {useSelector} from "react-redux";
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
 import {Car} from "../Car/Car";
+import {getAllCars} from "../../store/cars.slice";
 
 const Cars = () => {
    const {cars} = useSelector(state => state['carReducer'])
-    console.log(cars)
+    const dispatch =useDispatch();
+    useEffect(()=>{
+        dispatch(getAllCars())
+    },[])
+    console.log(getAllCars())
     return (
         <div>
             {

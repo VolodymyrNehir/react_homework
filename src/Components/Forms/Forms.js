@@ -7,9 +7,9 @@ import {addCar} from "../../store/cars.slice";
 
 const Forms = () => {
   const {register,reset,handleSubmit} = useForm()
-   const dispatch = useDispatch()
+   // const dispatch = useDispatch()
     const submit = (e) => {
-      dispatch(addCar({e}))
+      // dispatch(addCar({e}))
       reset()
     }
 

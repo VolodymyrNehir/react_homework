@@ -3,22 +3,25 @@ import {CarsServices} from "../Components/services/cars.services";
 
 
 export const getAllCars = createAsyncThunk(
-    'getAllCars/carSlice',
-    async ()=>{
+    'carSlice/getAllCars',
+    async (_,{rejectWithValue})=>{
         try {
-const cars = await CarsServices.getCars()
-            return cars
+            const car = await CarsServices.getCars();
+            return car;
         }
         catch (e){
-
+            console.log(e.response.data.detail);
+            return rejectWithValue(e.response.data.detail)
         }
     }
 )
+
 
 const carSlice = createSlice({
     name:'carSlice',
     initialState:{
         cars:[]
+
     },
     reducers:{
         addCar:(state,action)=>{
@@ -26,19 +29,22 @@ const carSlice = createSlice({
         },
         deletCar:(state,action)=>{
           state.cars = state.cars.filter(value => value.id !== action.payload.id)
-        }
-    },
-    extraReducers:{
-        [getAllCars.pending]: (state)=>{
-            state.status = 'pending'
-            tate.error = null
         },
-        [getAllCars.fulfilled]: (state) =>{
 
-        }
+    extraReducers:{
+        [getAllCars.pending]:(state)=>{
+            state.status = 'pending'
+
+        },
+        [getAllCars.fulfilled]: (state,action) =>{
+state.cars = action.payload
+        },
+        [getAllCars.rejected]: (state, action) => {
+            state.error = action.payload
+        },
+    }
     }
 })
-
 
 const carReducer = carSlice.reducer;
 export const {addCar,deletCar}= carSlice.actions;
