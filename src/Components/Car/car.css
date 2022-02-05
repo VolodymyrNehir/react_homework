@@ -1,0 +1,7 @@
+.car{
+    background: #c2cdda;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 40% 10px 40% ;
+}

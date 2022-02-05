@@ -1,18 +1,32 @@
-import React from 'react';
-import {useForm} from "react-hook-form";
-import {useDispatch} from "react-redux";
+import React, {useEffect} from 'react';
 
+import {useForm} from "react-hook-form";
+import {useDispatch, useSelector} from "react-redux";
 import './forms.css'
-import {addCar} from "../../store/cars.slice";
+import carReducer, { creatCars, updateCars} from "../../store/cars.slice";
 
 const Forms = () => {
-  const {register,reset,handleSubmit} = useForm()
-   // const dispatch = useDispatch()
-    const submit = (e) => {
-      // dispatch(addCar({e}))
-      reset()
-    }
+    const {upCar} = useSelector(state => state['carReducer']);
 
+    useEffect(() => {
+        setValue("model", upCar.model);
+        setValue("price", upCar.price);
+        setValue("year", upCar.year);
+    }, [upCar]);
+
+    const {register, reset, handleSubmit, setValue} = useForm();
+
+    const dispatch = useDispatch();
+
+
+    const submit = (data) => {
+        dispatch(creatCars({data}));
+        reset();
+    }
+    const upadate = (data) => {
+        dispatch(updateCars({id: upCar.id, newCar: data}));
+
+    };
     return (
         <div className='forms'>
             <form onSubmit={handleSubmit(submit)}>
@@ -20,6 +34,7 @@ const Forms = () => {
                 <input type="text" placeholder='price' {...register('price')}/>
                 <input type="text" placeholder='year' {...register('year')}/>
                 <button>save</button>
+                {upCar.id && <button onClick={handleSubmit(upadate)}>update</button>}
             </form>
         </div>
     );
