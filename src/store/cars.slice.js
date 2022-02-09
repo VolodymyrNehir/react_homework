@@ -96,3 +96,4 @@ const carSlice = createSlice({
 const carReducer = carSlice.reducer;
 export const {addCar, deletCar, setUpdateCars, updateState} = carSlice.actions;
 export default carReducer;
+console.log(initialState.cars)

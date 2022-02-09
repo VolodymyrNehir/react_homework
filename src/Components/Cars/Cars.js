@@ -7,7 +7,7 @@ import {getAllCars} from "../../store/cars.slice";
 const Cars = () => {
     const {cars, status, error} = useSelector(state => state['carReducer']);
     const dispatch = useDispatch();
-
+    console.log(cars)
     useEffect(() => {
         dispatch(getAllCars());
     }, [])
